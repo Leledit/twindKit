@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("react/jsx-runtime"),a=require("tailwind-merge"),i=({children:e,onClick:t,className:r="",disabled:n=!1,...o})=>s.jsx("button",{className:a.twMerge(`rounded-lg transition py-3 px-4 text-primary-50 min-w-[140px] cursor-pointer mt-5
+        shadow-theme-xs hover:bg-brand-600 disabled:bg-brand-300 bg-accent-500 hover:accent-500/90 w-full`,r),onClick:t,disabled:n,...o,children:e});exports.Button=i;
