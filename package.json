@@ -1,6 +1,7 @@
 {
   "name": "tw-elements",
   "version": "0.1.0",
+  "type": "module",
   "main": "./dist/tw-elements.cjs.js",
   "module": "./dist/tw-elements.es.js",
   "types": "./dist/types/index.d.ts",
@@ -39,6 +40,16 @@
     "url": "git+https://github.com/your-username/tw-elements.git"
   },
   "dependencies": {
-    "tailwind-merge": "^3.3.1"
+    "path": "^0.12.7",
+    "tailwind-merge": "^3.3.1",
+    "url": "^0.11.4",
+    "vite-plugin-static-copy": "^3.0.2"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
   }
 }

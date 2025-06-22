@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [
@@ -11,7 +18,7 @@ export default defineConfig({
       outDir: 'dist/types',
       include: ['src/**/*'],
       exclude: ['src/**/*.test.ts', 'src/**/*.spec.ts'],
-    }),
+    })
   ],
   build: {
     lib: {

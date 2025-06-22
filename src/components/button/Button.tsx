@@ -9,22 +9,18 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button: FC<ButtonProps> = ({
-  children,
-  onClick,
   className = '',
-  disabled = false,
-  ...attributes
+  children,
+  ...props
 }) => {
   return (
     <button
       className={twMerge(
-        `rounded-lg transition py-3 px-4 text-primary-50 min-w-[140px] cursor-pointer mt-5
-        shadow-theme-xs hover:bg-brand-600 disabled:bg-brand-300 bg-accent-500 hover:accent-500/90 w-full`,
+        `w-full min-h-[48px] rounded-lg transition py-3 px-4 min-w-[140px] cursor-pointer mt-5 shadow-theme-xs 
+        bg-secondary dark:bg-secondary-dark text-foreground dark:text-foreground-dark`, 
         className
       )}
-      onClick={onClick}
-      disabled={disabled}
-      {...attributes}
+      {...props}
     >
       {children}
     </button>
