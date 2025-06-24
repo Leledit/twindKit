@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/tw-elements.git"
+    "url": "https://github.com/Leledit/tw-elements.git"
   },
   "dependencies": {
     "path": "^0.12.7",
