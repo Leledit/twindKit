@@ -1,9 +1,12 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
+type Variant = "primary" | "secondary" | "cancel" | "danger";
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     onClick?: () => void;
     disabled?: boolean;
     className?: string;
+    variant?: Variant;
 }
-export declare const Button: FC<ButtonProps>;
+export declare function Button({ className, children, variant, ...props }: Readonly<ButtonProps>): import("react/jsx-runtime").JSX.Element;
+export {};

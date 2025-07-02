@@ -2,8 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { resolve, dirname } from 'path';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
-
 import { fileURLToPath } from 'url';
 
 
