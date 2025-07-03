@@ -49,7 +49,7 @@ export function Button({
   children,
   variant = "secondary",
   ...props
-}:Readonly<ButtonProps>) {
+}: Readonly<ButtonProps>) {
   return (
     <button
       className={twMerge(baseClasses, variantClasses[variant], className)}
@@ -58,4 +58,4 @@ export function Button({
       {children}
     </button>
   );
-};
+}

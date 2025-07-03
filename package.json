@@ -53,5 +53,8 @@
         "dist/types/*"
       ]
     }
+  },
+  "dependencies": {
+    "lucide-react": "^0.525.0"
   }
 }

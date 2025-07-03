@@ -1,45 +1,48 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
-type Size = 'sm' | 'md' | 'lg';
+type Size = "sm" | "md" | "lg";
 
-export interface IProps{
+export interface FormCheckboxProps {
   checked: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label?: string;
-  className?: string;
-  size?: Size
-};
+  classNameLabel?: string;
+  classNameInput?: string;
+  size?: Size;
+}
 
 const sizeMap = {
   sm: {
-    box: 'w-4 h-4',
-    icon: 'w-2.5 h-2.5',
-    label: 'text-xs',
+    box: "w-4 h-4",
+    icon: "w-2.5 h-2.5",
+    label: "text-xs",
   },
   md: {
-    box: 'w-5 h-5',
-    icon: 'w-3 h-3',
-    label: 'text-sm',
+    box: "w-5 h-5",
+    icon: "w-3 h-3",
+    label: "text-sm",
   },
   lg: {
-    box: 'w-6 h-6',
-    icon: 'w-3.5 h-3.5',
-    label: 'text-base',
+    box: "w-6 h-6",
+    icon: "w-3.5 h-3.5",
+    label: "text-base",
   },
 };
-
-const FormCheckbox: FC<IProps> = ({
+export function FormCheckbox({
   checked,
   onChange,
   label,
-  className = '',
-  size = 'md',
-}) => {
+  classNameLabel = "",
+  classNameInput = "",
+  size = "md",
+}: Readonly<FormCheckboxProps>) {
   const currentSize = sizeMap[size];
 
   return (
-    <label className={`inline-flex items-center cursor-pointer ${className}`}>
+    <label
+      className={`inline-flex items-center cursor-pointer ${classNameLabel}`}
+    >
       <input
         type="checkbox"
         checked={checked}
@@ -47,23 +50,26 @@ const FormCheckbox: FC<IProps> = ({
         className="peer hidden"
       />
       <div
-        className={twMerge(`
+        className={twMerge(
+          `
           flex items-center justify-center rounded border 
           ${currentSize.box}
           border-[var(--color-muted)]
-          peer-checked:bg-[var(--color-primary)]
-          peer-checked:border-[var(--color-primary)]
+          peer-checked:bg-[var(--color-secondary)]
+          peer-checked:border-[var(--color-secondary)]
           transition-colors
           dark:border-[var(--color-muted-dark)]
-          dark:peer-checked:bg-[var(--color-primary-dark)]
-          dark:peer-checked:border-[var(--color-primary-dark)]
-        `)}
+          dark:peer-checked:bg-[var(--color-secondary-dark)]
+          dark:peer-checked:border-[var(--color-secondary-dark)]
+        `,
+          classNameInput
+        )}
       >
         <svg
           className={twMerge(`
             ${currentSize.icon} hidden peer-checked:block 
-            text-[var(--color-primary-foreground)] 
-            dark:text-[var(--color-primary-foreground-dark)]
+            text-[var(--color-secondary-foreground)] 
+            dark:text-[var(--color-secondary-foreground-dark)]
           `)}
           viewBox="0 0 24 24"
         >
@@ -86,4 +92,4 @@ const FormCheckbox: FC<IProps> = ({
       )}
     </label>
   );
-};
+}
