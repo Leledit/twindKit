@@ -1,0 +1,1 @@
+export declare function getBorderColor(showError: boolean, success: boolean): "border-[var(--color-error)] focus:border-[var(--color-error)]" | "border-[var(--color-success)] focus:border-[var(--color-success)]" | "border-[var(--color-secondary)] focus:border-[var(--color-secondary)] dark:border-[var(--color-muted-dark)] dark:focus:border-[var(--color-secondary-dark)]";

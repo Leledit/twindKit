@@ -1,5 +1,7 @@
-import { InputHTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { InputHTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
+import { getBorderColor } from '../../utils/styles.js';
+import { FormLabel } from './FormLabel.js';
 
 export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
   isValidating: boolean;
@@ -18,41 +20,24 @@ export function FormInput({
   error = false,
   success = false,
   disabled = false,
-  messageError = 'Campo obrigatório',
+  messageError = "Campo obrigatório",
   isValidating,
   icon: Icon,
-  className = '',
+  className = "",
   onChange,
   ...rest
-}:Readonly<FormInputProps>) {
+}: Readonly<FormInputProps>) {
   const showError = error && isValidating;
 
-  const getBorderColor = () => {
-    if (showError) {
-      return 'border-[var(--color-error)] focus:border-[var(--color-error)]';
-    }
-    if (success) {
-      return 'border-[var(--color-success)] focus:border-[var(--color-success)]';
-    }
-    return 'border-[var(--color-secondary)] focus:border-[var(--color-secondary)] dark:border-[var(--color-muted-dark)] dark:focus:border-[var(--color-secondary-dark)]';
-  };
-
   const iconColor = showError
-    ? 'text-[var(--color-error)]'
+    ? "text-[var(--color-error)]"
     : success
-    ? 'text-[var(--color-success)]'
-    : 'text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]';
+    ? "text-[var(--color-success)]"
+    : "text-[var(--color-muted)] dark:text-[var(--color-muted-dark)]";
 
   return (
     <div className="w-full mt-5">
-      {label && (
-        <label
-          htmlFor={rest.id}
-          className="block mb-1 text-sm font-medium text-[var(--color-primary-foreground)] dark:text-[var(--color-foreground-dark)]"
-        >
-          {label}
-        </label>
-      )}
+      {label && <FormLabel>{label}</FormLabel>}
 
       <div className="relative">
         {Icon && (
@@ -68,11 +53,10 @@ export function FormInput({
             `block w-full rounded-md py-3 px-4 transition duration-200 border focus:outline-none appearance-none transition duration-200
              bg-[var(--color-background)] text-[var(--color-foreground)] placeholder-[var(--color-muted)] 
              dark:bg-[var(--color-background-dark)] dark:text-[var(--color-foreground-dark)] dark:placeholder-[var(--color-muted-dark)]
-             ${Icon ? 'pl-10' : ''}
-             ${getBorderColor()}
-             ${disabled ? 'opacity-60 cursor-not-allowed' : ''}
             `,
-        
+            Icon ? "pl-10" : "",
+            getBorderColor(showError, success),
+            disabled ? "opacity-60 cursor-not-allowed" : "",
             className
           )}
           {...rest}
@@ -84,6 +68,6 @@ export function FormInput({
       )}
     </div>
   );
-};
+}
 
 export default FormInput;
