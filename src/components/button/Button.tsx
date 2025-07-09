@@ -20,7 +20,7 @@ const variantClasses: Record<Variant, string> = {
     dark:text-[var(--color-primary-foreground-dark)]
   `,
   secondary: `
-    bg-[var(--color-secondary)] text-[var(--color-secondary-foreground)]
+    bg-[var(--color-secondary)] text-[var(--color-secondary-active)]
     hover:bg-[var(--color-secondary-hover)] active:bg-[var(--color-secondary-active)]
     dark:bg-[var(--color-secondary-dark)] dark:hover:bg-[var(--color-secondary-hover-dark)] dark:active:bg-[var(--color-secondary-active-dark)]
     dark:text-[var(--color-secondary-foreground-dark)]

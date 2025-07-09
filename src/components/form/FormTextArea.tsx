@@ -37,8 +37,8 @@ export function FormTextArea({
           className={twMerge(
             `border focus:outline-none appearance-none transition duration-200 rounded-md
              h-[50px] w-full resize-none appearance-none px-4 py-2.5 shadow-sm transition-colors duration-150
-             bg-[var(--color-background)] text-[var(--color-foreground)] placeholder-[var(--color-muted)]
-             dark:bg-[var(--color-background-dark)] dark:text-[var(--color-foreground-dark)] dark:placeholder-[var(--color-muted-dark)]
+             bg-[var(--color-primary)] text-[var(--color-primary-foreground)] placeholder-[var(--color-muted)]
+             dark:bg-[var(--color-primary-dark)] dark:text-[var(--color-primary-foreground-dark)] dark:placeholder-[var(--color-muted-dark)]
              focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)/10]
             `,
             getBorderColor(showError, success),

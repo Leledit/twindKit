@@ -39,7 +39,11 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={() => setIsDark(!isDark)}
-      className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-md bg-[var(--color-secondary)] text-[var(--color-on-secondary)] hover:opacity-90 transition"
+      className={`
+        cursor-pointer flex items-center gap-2 px-4 py-2 rounded-md hover:opacity-90 transition border
+         border-[var(--color-secondary-foreground)] text-[var(--color-secondary-foreground)]
+         dark:border-[var(--color-secondary-foreground-dark)] dark:text-[var(--color-secondary-foreground-dark)]
+        `}
     >
       {isDark ? "🌙 Modo Escuro" : "☀️ Modo Claro"}
     </button>

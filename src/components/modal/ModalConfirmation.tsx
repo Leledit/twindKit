@@ -1,5 +1,5 @@
 
-import { Button } from "tw-elements";
+import { Button } from "../button/Button.js";
 import { ModalDefault } from "./ModalDefault.js";
 
 export interface ModalConfirmationProps {
@@ -29,7 +29,7 @@ export function ModalConfirmation({
       className={className}
       isFullscreen={isFullscreen}
     >
-      <h3 className="mt-5 mb-2 text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)]">
+      <h3 className="mt-5 mb-2 text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]">
         {description}
       </h3>
       <div className="flex flex-row justify-end">

@@ -5,6 +5,7 @@ export interface TableActionProps {
     type: typeAction;
     action: () => void;
     textTooltip: string;
+    className?: string;
 }
-export declare function TableAction({ type, action, textTooltip, }: Readonly<TableActionProps>): ReactNode;
+export declare function TableAction({ type, action, textTooltip, className }: Readonly<TableActionProps>): ReactNode;
 export {};

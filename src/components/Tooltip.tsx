@@ -55,7 +55,8 @@ export function Tooltip({
             }}
             className={twMerge(
               `px-3 py-1 text-sm border rounded shadow-lg whitespace-nowrap`,
-              `bg-[var(--color-background)] text-[var(--color-foreground)] border-[var(--color-muted)]`
+              `bg-[var(--color-primary-foreground)] text-[var(--color-primary)] 
+               dark:bg-[var(--color-primary-foreground-dark)] dark:text-[var(--color-primary-dark)] border-[var(--color-muted)]`
             )}
           >
             {text}

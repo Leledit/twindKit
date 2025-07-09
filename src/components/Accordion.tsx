@@ -5,46 +5,45 @@ import { twMerge } from "tailwind-merge";
 export interface AccordionProps {
   title: string;
   children: ReactNode;
-  defaultOpen?: boolean;
+  isOpen?: boolean;         
+  onToggle?: () => void; 
   className?: string;
 }
 
 export function Accordion({
   title,
   children,
-  defaultOpen = false,
+  isOpen: controlledOpen,
+  onToggle,
   className,
 }: Readonly<AccordionProps>) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+
+  const toggle = () => {
+    if (onToggle) onToggle();
+    else setInternalOpen((prev) => !prev);
+  };
+
 
   return (
-    <div
-      className={twMerge(
-        "overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] shadow-sm",
-        className
-      )}
-    >
+    <div className="overflow-hidden shadow-sm">
       <button
-        className="flex w-full items-center justify-between px-4 py-5 cursor-pointer hover:bg-[var(--color-hover)] transition-colors"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-expanded={isOpen}
-        aria-controls="accordion-content"
+        className={twMerge("flex justify-between items-center w-full cursor-pointer p-4 hover:bg-background-surface transition-colors border-b border-[#E3E3E3] border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] text-primary-foreground dark:text-primary-foreground-dark", className)}
+        onClick={toggle}
       >
-        <span className="text-sm font-medium">{title}</span>
-        {isOpen ? (
-          <ChevronUp className="w-4 h-4 text-[var(--color-text)]" />
-        ) : (
-          <ChevronDown className="w-4 h-4 text-[var(--color-text)]" />
-        )}
+        <span className="text-sm ">{title}</span>
+        {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
       </button>
 
       <div
-        id="accordion-content"
         className={`transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-screen py-2 px-2" : "max-h-0 p-0"
+          isOpen ? "max-h-screen py-2" : "max-h-0 py-0"
         }`}
       >
-        <div className="text-sm">{children}</div>
+        <div className="text-sm text-gray-700 dark:text-gray-300">
+          {children}
+        </div>
       </div>
     </div>
   );

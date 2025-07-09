@@ -40,7 +40,7 @@ export function Pagination({
               currentPage === i + 1
                 ? `bg-[var(--color-secondary-active)] text-[var(--color-primary-foreground)] 
                    dark:bg-[var(--color-secondary-active-dark)] dark:text-[var(--color-primary-foreground-dark)]`
-                : "text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)] hover:bg-[var(--color-muted-dark)/10]"
+                : "text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)] hover:bg-[var(--color-muted-dark)/10]"
             )}
           >
             {i + 1}

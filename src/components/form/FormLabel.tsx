@@ -13,7 +13,7 @@ export function FormLabel({ htmlFor, children, className }: Readonly<FormLabelPr
       htmlFor={htmlFor}
       className={twMerge(
         `block mb-1 text-sm font-medium 
-         text-[var(--color-primary-foreground)] dark:text-[var(--color-foreground-dark)]`,
+         text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]`,
         className
       )}
     >

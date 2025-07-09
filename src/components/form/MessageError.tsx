@@ -9,9 +9,9 @@ export function MessageError({ messageError }: Readonly<MessageErrorProps>) {
     <p
       className="
         mt-3 mb-3 p-2 min-h-[30px] w-full rounded-[var(--tw-borderRadius-md)] rounded-md
-        bg-[var(--color-error)] text-[var(--color-foreground-dark)]
+        bg-[var(--color-error)] text-[var(--color-primary-foreground-dark)]
         text-[14px] leading-[30px] text-center
-        dark:bg-[var(--color-error-dark)] dark:text-[var(--color-foreground-dark)]
+        dark:bg-[var(--color-error-dark)] dark:text-[var(--color-primary-foreground-dark)]
       "
     >
       {messageError}

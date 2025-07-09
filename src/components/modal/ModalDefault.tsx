@@ -60,12 +60,14 @@ export function ModalDefault({
         onClick={(e) => e.stopPropagation()}
         className={twMerge(
           className,
-          `border border-[#454545] relative z-50 w-full bg-[var(--color-background)] text-[var(--color-foreground)] dark:bg-[var(--color-background-dark)] dark:text-[var(--color-foreground-dark)] shadow-xl transition-all`,
+          `border border-[#454545] relative z-50 w-full 
+           bg-[var(--color-primary)] text-[var(--color-primary-foreground)] 
+           dark:bg-[var(--color-primary-dark)] dark:text-[var(--color-primary-foreground-dark)] shadow-xl transition-all`,
           isFullscreen ? "h-full" : "max-w-lg rounded-xl p-6"
         )}
       >
         <div>
-          <p className="mt-[-10px] text-[20px] text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)]">
+          <p className="mt-[-10px] text-[20px] text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]">
             {title}
           </p>
           <button

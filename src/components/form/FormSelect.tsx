@@ -46,8 +46,8 @@ export function FormSelect({
           disabled={disabled}
           className={twMerge(
             `block w-full rounded-md py-3 px-4 pr-10 transition duration-200 appearance-none
-             bg-[var(--color-background)] text-[var(--color-foreground)] placeholder-[var(--color-muted)]
-             dark:bg-[var(--color-background-dark)] dark:text-[var(--color-foreground-dark)] dark:placeholder-[var(--color-muted-dark)]
+             bg-[var(--color-primary)] text-[var(--color-primary-foreground)] placeholder-[var(--color-muted)]
+             dark:bg-[var(--color-primary-dark)] dark:text-[var(--color-primary-foreground-dark)] dark:placeholder-[var(--color-muted-dark)]
              transition duration-200 border focus:outline-none appearance-none transition duration-200
             `,
             getBorderColor(showError, success),

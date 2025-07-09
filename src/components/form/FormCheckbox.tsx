@@ -55,12 +55,12 @@ export function FormCheckbox({
           flex items-center justify-center rounded border 
           ${currentSize.box}
           border-[var(--color-muted)]
-          peer-checked:bg-[var(--color-secondary)]
-          peer-checked:border-[var(--color-secondary)]
+          peer-checked:bg-[var(--color-secondary-foreground)]
+          peer-checked:border-[var(--color-secondary-foreground)]
           transition-colors
           dark:border-[var(--color-muted-dark)]
-          dark:peer-checked:bg-[var(--color-secondary-dark)]
-          dark:peer-checked:border-[var(--color-secondary-dark)]
+          dark:peer-checked:bg-[var(--color-secondary-foreground-dark)]
+          dark:peer-checked:border-[var(--color-secondary-foreground-dark)]
         `,
           classNameInput
         )}
@@ -83,8 +83,8 @@ export function FormCheckbox({
         <span
           className={twMerge(`
             ml-2 ${currentSize.label}
-            text-[var(--color-foreground)] 
-            dark:text-[var(--color-foreground-dark)]
+            text-[var(--color-primary-foreground)] 
+            dark:text-[var(--color-primary-foreground-dark)]
           `)}
         >
           {label}

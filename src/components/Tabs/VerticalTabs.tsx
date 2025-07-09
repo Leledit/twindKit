@@ -34,10 +34,10 @@ export function VerticalTabs({
   const selectedTab = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <>
+    <div className="flex flex-row h-full">
       <div
         className={twMerge(
-          "fixed top-[50px] left-0 h-[calc(100%-50px)] w-12 flex flex-col justify-between py-4 z-50 bg-[var(--color-surface)] border-r border-[var(--color-border)]",
+          "w-12 flex flex-col justify-between py-4 z-50 bg-[var(--color-surface)] border-r border-[var(--color-border)]",
           className
         )}
       >
@@ -57,7 +57,7 @@ export function VerticalTabs({
           ))}
         </div>
 
-        <div className="flex flex-col items-center space-y-3 mb-2">
+        <div className="flex flex-col items-center space-y-3 mb-[50px]">
           {actions?.map((action) => (
             <span
               key={action.id}
@@ -71,9 +71,9 @@ export function VerticalTabs({
           ))}
         </div>
       </div>
-      <div className="fixed top-[50px] left-12 h-[calc(100%-50px)] w-64 bg-[var(--color-surface)] border-r border-[var(--color-border)] shadow-lg z-40 overflow-y-auto text-[var(--color-text)]">
+      <div className="relative w-64 bg-[var(--color-surface)] border-r border-[var(--color-border)] shadow-lg z-40 overflow-y-auto text-[var(--color-text)]">
         {selectedTab?.content}
       </div>
-    </>
+    </div>
   );
 }

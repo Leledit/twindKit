@@ -16,14 +16,14 @@ export function Table<T>({
   rowActions,
 }: Readonly<TableProps<T>>) {
   return (
-    <div className="shadow-sm border border-[var(--color-muted)] rounded-md text-[var(--color-foreground)] overflow-x-auto w-full">
+    <div className="shadow-sm border border-[var(--color-muted)] rounded-md text-[var(--color-primary-foreground)] overflow-x-auto w-full">
       <table className="min-w-[800px] table-auto w-full">
         <thead>
-          <tr className="border-b border-[var(--color-muted)] bg-[var(--color-background)] dark:bg-[var(--color-background-dark)]">
+          <tr className="border-b border-[var(--color-muted)] bg-[var(--color-primary)] dark:bg-[var(--color-primary-dark)]">
             {columns.map((column) => (
               <th
                 key={column.key}
-                className="px-4 py-2 text-[16px] text-left font-semibold text-[var(--color-secondary)]"
+                className="px-4 py-2 text-[16px] text-left font-semibold text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]"
               >
                 {column.title}
               </th>
@@ -56,7 +56,7 @@ export function Table<T>({
                   return (
                     <td
                       key={String(column.key)}
-                      className="px-4 py-2 text-[14px] font-normal text-left text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)]"
+                      className="px-4 py-2 text-[14px] font-normal text-left text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]"
                     >
                       {column.render
                         ? column.render(cellValue, row)

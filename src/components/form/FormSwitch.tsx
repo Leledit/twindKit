@@ -20,7 +20,7 @@ export function FormSwitch({
   return (
     <div className={twMerge("mb-2 w-full mt-5", className)}>
       <div className="flex items-center gap-3">
-        <p className="text-base text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)]">
+        <p className="text-base text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)]">
           {label}
         </p>
         <button

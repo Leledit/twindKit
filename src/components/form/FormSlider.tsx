@@ -25,7 +25,11 @@ export function FormSlider({
   return (
     <div className={twMerge("mb-2 w-full mt-4", className)}>
       <div className="flex items-center">
-        <p className="text-base text-[var(--color-foreground)] dark:text-[var(--color-foreground-dark)] mr-4">
+        <p
+          className={`
+            text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)] mr-4
+          `}
+        >
           {label}
         </p>
         <input
@@ -39,8 +43,9 @@ export function FormSlider({
         />
         <p
           className="
-            ml-4 w-9 h-9 flex items-center justify-center rounded-full bg-[var(--color-secondary)] 
-            text-[var(--color-foreground)] dark:text-[var(--color-secondary-dark)] text-sm"
+            ml-4 w-9 h-9 flex items-center justify-center rounded-full text-sm
+            bg-[var(--color-secondary)] text-[var(--color-primary-foreground)] 
+            dark:bg-[var(--color-secondary-dark)] dark:text-[var(--color-secondary-foreground-dark)] "
         >
           {value}
         </p>
