@@ -1,14 +1,14 @@
 {
-  "name": "tw-elements",
+  "name": "twindKit",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/tw-elements.cjs.js",
-  "module": "./dist/tw-elements.es.js",
+  "main": "./dist/twindKit.cjs.js",
+  "module": "./dist/twindKit.es.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/tw-elements.es.js",
-      "require": "./dist/tw-elements.cjs.js",
+      "import": "./dist/twindKit.es.js",
+      "require": "./dist/twindKit.cjs.js",
       "types": "./dist/types/index.d.ts"
     },
     "./styles": "./dist/styles/index.css"
@@ -45,7 +45,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Leledit/tw-elements.git"
+    "url": "https://github.com/Leledit/twindKit.git"
   },
   "typesVersions": {
     "*": {

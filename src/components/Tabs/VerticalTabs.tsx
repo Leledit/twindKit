@@ -1,7 +1,7 @@
 "use client";
+import { Tooltip } from "../Tooltip.js";
 import { ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { Tooltip } from "tw-elements";
 
 export type TabItem = {
   id: string;

@@ -21,8 +21,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'tw-elements',
-      fileName: (format) => `tw-elements.${format}.js`,
+      name: 'twindKit',
+      fileName: (format) => `twindKit.${format}.js`,
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
