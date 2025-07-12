@@ -8,6 +8,9 @@ export interface PaginationProps {
   currentPage: number;
   setCurrentPage: (page: number) => void;
   elementsPerPage?: number;
+  classNameIcons?: string;
+  classNameSelectPage?: string;
+  className?: string;
 }
 
 export function Pagination({
@@ -15,6 +18,9 @@ export function Pagination({
   currentPage,
   setCurrentPage,
   elementsPerPage = 20,
+  classNameIcons,
+  classNameSelectPage,
+  className
 }: Readonly<PaginationProps>) {
   const numberPage = Math.ceil(totalData / elementsPerPage);
 
@@ -24,11 +30,14 @@ export function Pagination({
     setCurrentPage(page);
   };
 
+  const classesSelectPage = `bg-[var(--color-secondary-active)] text-[var(--color-primary-foreground)] 
+      dark:bg-[var(--color-secondary-active-dark)] dark:text-[var(--color-primary-foreground-dark)] ${classNameSelectPage}`
+
   return (
     <div className="w-full flex flex-col justify-center items-center mb-10 mt-5">
       <div className="max-w-[400px] w-full flex flex-row justify-around items-center">
         <ChevronsLeft
-          className="text-[var(--color-secondary)] cursor-pointer"
+          className={twMerge("text-[var(--color-secondary)] cursor-pointer", classNameIcons)}
           onClick={() => handlePageChange(1)}
         />
         {Array.from({ length: numberPage }, (_, i) => (
@@ -38,16 +47,16 @@ export function Pagination({
             className={twMerge(
               `flex justify-center items-center w-[40px] h-[40px] text-sm rounded-full transition-colors duration-200 cursor-pointer`,
               currentPage === i + 1
-                ? `bg-[var(--color-secondary-active)] text-[var(--color-primary-foreground)] 
-                   dark:bg-[var(--color-secondary-active-dark)] dark:text-[var(--color-primary-foreground-dark)]`
-                : "text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)] hover:bg-[var(--color-muted-dark)/10]"
+                ? classesSelectPage
+                : "text-[var(--color-primary-foreground)] dark:text-[var(--color-primary-foreground-dark)] hover:bg-[var(--color-muted-dark)/10] "+className,
+                
             )}
           >
             {i + 1}
           </button>
         ))}
         <ChevronsRight
-          className="text-[var(--color-secondary)] cursor-pointer"
+          className={twMerge("text-[var(--color-secondary)] cursor-pointer", classNameIcons)}
           onClick={() => handlePageChange(numberPage)}
         />
       </div>

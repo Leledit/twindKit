@@ -4,5 +4,8 @@ export interface PaginationProps {
     currentPage: number;
     setCurrentPage: (page: number) => void;
     elementsPerPage?: number;
+    classNameIcons?: string;
+    classNameSelectPage?: string;
+    className?: string;
 }
-export declare function Pagination({ totalData, currentPage, setCurrentPage, elementsPerPage, }: Readonly<PaginationProps>): import("react/jsx-runtime").JSX.Element | null;
+export declare function Pagination({ totalData, currentPage, setCurrentPage, elementsPerPage, classNameIcons, classNameSelectPage, className }: Readonly<PaginationProps>): import("react/jsx-runtime").JSX.Element | null;
